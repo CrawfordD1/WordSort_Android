@@ -38,37 +38,15 @@ public class Wordcount {
             count += 1;
             Wordoccurences.put(word, count);
         }
-        HashMap<String, Integer> results = new HashMap<String, Integer>(Wordoccurences);
+        HashMap<String, Integer> results = new HashMap<>(Wordoccurences);
         Wordoccurences.clear();
         return results;
     }
-//
-//    public String getWordOccurencesSorted(String input) {
-//        for (String word : input.split(" ")) {
-//            Integer count = Wordoccurences.get(word);
-//            if(count == null){
-//                count = 0;
-//            }
-//            count += 1;
-//            Wordoccurences.put(word, count);
-//        }
-//        HashMap<String, Integer> results = new HashMap<String, Integer>(Wordoccurences);
-//        TreeMap<Integer, String> sortedResults = new TreeMap<Integer, String>();
-//        HashMap<String, Integer> resultFinal = new HashMap<String, Integer>();
-//        for(HashMap.Entry entry: results.entrySet()){
-//            sortedResults.put(entry.getValue().hashCode(), entry.getKey().toString());
-//        }
-//        for(TreeMap.Entry entry: sortedResults.entrySet()){
-//            resultFinal.put(entry.getValue().toString(), entry.getKey().hashCode());
-//        }
-//
-//        Wordoccurences.clear();
-//        return resultFinal.toString();
-//    }
+
 
     public String getWordOccurencesSorted(HashMap<String, Integer> map) {
-        LinkedHashMap<String, Integer> results = new LinkedHashMap<String, Integer>();
-        ArrayList<Integer> array = new ArrayList<Integer>();
+        LinkedHashMap<String, Integer> results = new LinkedHashMap<>();
+        ArrayList<Integer> array = new ArrayList<>();
 
         for (HashMap.Entry entry: map.entrySet()){
             array.add(entry.getValue().hashCode());
